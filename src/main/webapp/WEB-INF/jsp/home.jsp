@@ -6,6 +6,8 @@
 <title>Homepage</title>
 </head>
 <body>
-	It works! This page was rendered on ${currentTime}
+	It works! This page was rendered on ${currentTime}<br/>
+	<a href="/recipes">listar receitas</a><br/>
+	<a href="/recipes/create">criar receitas</a><br/>
 </body>
 </html>

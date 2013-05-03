@@ -22,6 +22,7 @@ public class RecipeController {
         
         return "listRecipes";
     }
+   // @RequestMapping(method=RequestMapping.GET, value="/recipes/create"{}
     
     @RequestMapping(method=RequestMethod.GET, value="/recipes/{id}")
     public String showRecipe(Model model, @PathVariable String id) {
