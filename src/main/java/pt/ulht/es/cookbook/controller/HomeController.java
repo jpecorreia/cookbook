@@ -17,8 +17,8 @@ public class HomeController {
         Date date = new Date(System.currentTimeMillis());
         DateFormat df = DateFormat.getDateInstance();
         model.addAttribute("currentTime", df.format(date));
-	    
-		return "home";
+        model.addAttribute("name", "Utilizador X");
+	    return "home";
 	}
 
 }
