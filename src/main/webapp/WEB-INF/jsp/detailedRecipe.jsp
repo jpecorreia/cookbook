@@ -12,5 +12,7 @@
 	<p>${recipe.problema}</p>
 	<b>Solucao</b>
 	<p>${recipe.solucao}</p>
+	<b>Autor</b>
+	<p>${recipe.utilizador}</p>
 </body>
 </html>

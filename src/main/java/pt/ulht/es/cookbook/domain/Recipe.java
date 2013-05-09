@@ -6,12 +6,14 @@ public class Recipe {
 	private String titulo;
 	private String problema;
 	private String solucao;
+	private String utilizador;
 	
-	public Recipe(String titulo, String problema, String solucao) {
+	public Recipe(String titulo, String problema, String solucao, String utilizador) {
 		
 		this.titulo = titulo;
 		this.solucao = solucao;
 		this.problema = problema;
+		this.utilizador = utilizador;
 		
 	}
 
@@ -24,6 +26,10 @@ public class Recipe {
 }
 	public String getSolucao() {
 		return solucao;
+	}
+	
+	public String getUtilizador() {
+		return utilizador;
 	}
 
 	public String getId() {
