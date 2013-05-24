@@ -10,7 +10,7 @@
 <body>
 	<h1>${recipe.title}</h1>
 	<b>Problema</b>
-	<p>${recipe.x}</p>
+	<p>${recipe.problem}</p>
 	<b>Solucao</b>
 	<p>${recipe.solution}</p>
 	<b>Autor</b>

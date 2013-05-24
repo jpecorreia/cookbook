@@ -12,7 +12,5 @@ public class Recipe extends Recipe_Base {
       setCreationTimestamp(new DateTime());
       setCookbookManager(CookbookManager.getInstance());
     }
-
-    public String getX(){return "xpto";}
-    
+   
 }

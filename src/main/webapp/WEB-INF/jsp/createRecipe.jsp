@@ -1,20 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
+<html>
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		<style type="text/css">
-			@import url("resources/bootstrap.css");
-			@import url("resources/bootstrap.min.css");
-			@import url("resources/bootstrap-responsive.min.css");
-			@import url("resources/bootstrap-responsive.css");
-		</style>
-			 <script src="resources/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="/static/bootstrap.css" type="text/css" />
+		 <script src="resources/bootstrap.min.js"></script>
 			 <script src="http://code.jquery.com/jquery.js"></script>
 			 
 			 <title>Criação Receitas</title>
 </head>	 
-			 
+		<body>	 
 			 <div class="navbar  navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
@@ -46,10 +41,11 @@
 
 
 <form method="POST" action="/recipes">
-	Titulo: <input type="text" name="title" /><br />
-	Problema: <input type="text" name="problem" /><br />
-	Solução: <input type="text" name="solution" /><br />
-	Utilizador: <input type="text" name="author" /><br />
+	Titulo: <input type="text" name="titulo" /><br />
+	Problema: <input type="text" name="problema" /><br />
+	Solução: <input type="text" name="solucao" /><br />
+	Utilizador: <input type="text" name="utilizador" /><br />
 	<input type="submit" value="Criar Nova Receita" />
 </form>
-
+</body>
+</html>
