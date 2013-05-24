@@ -1,44 +1,18 @@
 package pt.ulht.es.cookbook.domain;
 
-public class Recipe {
+import org.joda.time.DateTime;
 
-	private String id;
-	private String titulo;
-	private String problema;
-	private String solucao;
-	private String utilizador;
-	
-	public Recipe(String titulo, String problema, String solucao, String utilizador) {
-		
-		this.titulo = titulo;
-		this.solucao = solucao;
-		this.problema = problema;
-		this.utilizador = utilizador;
-		
-	}
+public class Recipe extends Recipe_Base {
+    
+    public  Recipe(String title, String problem, String solution, String author) {
+      setTitle(title);
+      setProblem(problem);
+      setSolution(solution);
+      setAuthor(author);
+      setCreationTimestamp(new DateTime());
+      setCookbookManager(CookbookManager.getInstance());
+    }
 
-	public String getTitulo() {
-		return titulo;
-	}
-	
-	public String getProblema() {
-		return problema;
+    public String getX(){return "xpto";}
+    
 }
-	public String getSolucao() {
-		return solucao;
-	}
-	
-	public String getUtilizador() {
-		return utilizador;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-	
-}
-

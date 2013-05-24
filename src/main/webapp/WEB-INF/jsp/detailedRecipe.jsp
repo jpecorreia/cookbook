@@ -4,15 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Recipes ${recipe.id}</title>
+<title>Recipes ${recipe.externalId}</title>
+<link href="styles.css" type="text/css" />
 </head>
 <body>
-	<h1>${recipe.titulo}</h1>
+	<h1>${recipe.title}</h1>
 	<b>Problema</b>
-	<p>${recipe.problema}</p>
+	<p>${recipe.x}</p>
 	<b>Solucao</b>
-	<p>${recipe.solucao}</p>
+	<p>${recipe.solution}</p>
 	<b>Autor</b>
-	<p>${recipe.utilizador}</p>
+	<p>${recipe.author}</p>
 </body>
 </html>

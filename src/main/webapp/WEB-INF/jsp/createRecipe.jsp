@@ -46,10 +46,10 @@
 
 
 <form method="POST" action="/recipes">
-	Titulo: <input type="text" name="titulo" /><br />
-	Problema: <input type="text" name="problema" /><br />
-	Solução: <input type="text" name="solucao" /><br />
-	Utilizador: <input type="text" name="utilizador" /><br />
+	Titulo: <input type="text" name="title" /><br />
+	Problema: <input type="text" name="problem" /><br />
+	Solução: <input type="text" name="solution" /><br />
+	Utilizador: <input type="text" name="author" /><br />
 	<input type="submit" value="Criar Nova Receita" />
 </form>
 
