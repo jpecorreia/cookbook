@@ -1,45 +1,75 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+
+<!--Definição de imports CSS-->
+
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		<link rel="stylesheet" href="/static/bootstrap.css" type="text/css" />
-		 <script src="resources/bootstrap.min.js"></script>
-			 <script src="http://code.jquery.com/jquery.js"></script>
-			 
-			 <title>Criação Receitas</title>
-</head>	 
-		<body>	 
-			 <div class="navbar  navbar-inverse">
+
+  <link rel="stylesheet" type="text/css" href="/static/bootstrap.css">
+
+       <script src="js/bootstrap.min.js"></script>
+       <script src="http://code.jquery.com/jquery.js"></script>
+
+<title>Create Recipe</title>
+
+  </head>
+
+<!--Barra topo da Página-->
+
+<div class="navbar  navbar-inverse">
   <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="#">
-      	<i class="icon-eye-open icon-white"></i>
+        <i class="icon-eye-open icon-white"></i>
         Cookbook
       </a>
       <ul class="nav">
         <li>
-          <a href="#">
+          <a href="/">
             Home
           </a>
         </li>
         <li>
-          <a href="about_boot.html">
-            Sobre Nós
-          </a>
-        </li>
-        <li>
-          <a href="contact_boot.html" target="_blank">
-            Contacto
+          <a href="/recipes">
+            Receitas
           </a>
         </li>
       </ul>
- 	 </div>
+   </div>
   </div>
 </div>
 
+<!--Corpo da mensagem-->
+
+<body background="img_bck/cloth_alike.png">
+
+<form method="POST" action="/recipes" class="well span8">
+  <div class="row">
+    <div class="span3">
+      <label>Titulo</label>
+      <input type="text" name="titulo" class="span3">
+      <label>Problema</label>
+      <input type="text" name="problema" class="span3">
+      <label>Autor</label>
+      <input type="text" name="utilizador" class="span3">
+      
+    </div>
+    <div class="span">
+      <label>Solução</label>
+      <textarea name="solucao" id="message"  class="input-small span5" rows="5"></textarea>
+    </div>
+  
+    <button type="submit" class="btn btn-primary pull-right">Criar</button>
+  </div>
+</form>
 
 
+  </body>
+</html>
+
+<!--
 <form method="POST" action="/recipes">
 	Titulo: <input type="text" name="titulo" /><br />
 	Problema: <input type="text" name="problema" /><br />
@@ -49,3 +79,4 @@
 </form>
 </body>
 </html>
+-->
