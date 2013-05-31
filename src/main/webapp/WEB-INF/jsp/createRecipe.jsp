@@ -36,6 +36,12 @@
             Receitas
           </a>
         </li>
+		<li>
+          <form method="POST" action="/recipes/searchRecipe">
+            <input name="pesquisa">
+            <input type="submit" value="pesquisa">
+          </form>
+        </li>
       </ul>
    </div>
   </div>
@@ -54,7 +60,8 @@
       <input type="text" name="problema" class="span3">
       <label>Autor</label>
       <input type="text" name="utilizador" class="span3">
-      
+      <label>Tags</label>
+      <input type="text" name="tags" class="span3">
     </div>
     <div class="span">
       <label>Solução</label>
@@ -69,14 +76,3 @@
   </body>
 </html>
 
-<!--
-<form method="POST" action="/recipes">
-	Titulo: <input type="text" name="titulo" /><br />
-	Problema: <input type="text" name="problema" /><br />
-	Solução: <input type="text" name="solucao" /><br />
-	Utilizador: <input type="text" name="utilizador" /><br />
-	<input type="submit" value="Criar Nova Receita" />
-</form>
-</body>
-</html>
--->

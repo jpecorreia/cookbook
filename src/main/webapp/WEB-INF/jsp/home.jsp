@@ -35,6 +35,12 @@
             Receitas
           </a>
         </li>
+		<li>
+          <form method="POST" action="/recipes/search">
+            <input name="pesquisa">
+            <input type="submit" value="pesquisa">
+          </form>
+        </li>
       </ul>
  	 </div>
   </div>
