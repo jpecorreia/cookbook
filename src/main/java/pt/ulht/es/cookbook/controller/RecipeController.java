@@ -1,9 +1,10 @@
 package pt.ulht.es.cookbook.controller;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,8 @@ public class RecipeController {
   
     @RequestMapping(method=RequestMethod.GET, value="/recipes")
     public String listRecipes(Model model) {
-    	Set<Recipe> recipes = CookbookManager.getInstance().getRecipeSet();
+    	List<Recipe> recipes = new ArrayList<Recipe>(CookbookManager.getInstance().getRecipeSet());
+    	Collections.sort(recipes);
     	model.addAttribute("recipes", recipes);
     	return "listRecipes";
     }
@@ -43,18 +45,26 @@ public class RecipeController {
 	   		return "redirect:/recipes/"+recipe.getExternalId(); 
    
    }
-   
-   
+  /* 
+   @RequestMapping(method=RequestMethod.GET, value="/recipes/search")   
+   public String showRecipeSearchForm(){
+   	    	return "searchRecipe";
+   }
+   */
    @RequestMapping(method=RequestMethod.POST, value="/recipes/search")
-   public String searchRecipe(@RequestParam Map<String,String> params){
+   public String searchRecipe(@RequestParam Map<String,String> params, Model model){
 	   String pesquisa = params.get("pesquisa");
 	   String[] tokens = pesquisa.split(",");
+	   List<Recipe> results = new ArrayList<Recipe>();
 	   for (Recipe recipe : CookbookManager.getInstance().getRecipeSet()){
 		   if (recipe.match(tokens)){
 			   
-			  ArrayList<String> mytokens = new ArrayList<String>(); 
+			   results.add(recipe);
+			   
 		   }
 	   }
+	   model.addAttribute("recipes", results);
+	   return "showRecipe";
 	      }
    
    
@@ -71,6 +81,43 @@ public class RecipeController {
     		}
     }
         
+    @RequestMapping("/recipes/{id}/delete")
+    public String deleteRecipe(@PathVariable("id") String id){
+    	
+    	//Apagar receitas
+    	Recipe recipe = AbstractDomainObject.fromExternalId(id);
+    	recipe.delete();
+    	
+    	//Depois de apagar voltar as receitas
+    	return "redirect://recipes";
+    }
     
+    //------------------Edicao de receitas---------------------------
     
+    @RequestMapping("/recipes/{id}/edit")
+    public String editRecipe(@PathVariable("id") String id, Model model){
+    	
+    	//Editar receitas
+    	Recipe recipe = AbstractDomainObject.fromExternalId(id);
+    	model.addAttribute("recipe", recipe);
+    	
+    	//Depois de editar voltar as receitas
+    	return "editRecipe";
+    }
+    @RequestMapping(method=RequestMethod.POST, value="/recipes/{id}")
+    public String editRecipe(@PathVariable("id") String id, @RequestParam Map<String,String> params){
+ 	   	
+    	String titulo = params.get("titulo");
+   		String problema = params.get("problema");
+   		String solucao = params.get("solucao");
+   		String utilizador = params.get("utilizador");
+   		String tags = params.get("tags");
+    	Recipe recipe = AbstractDomainObject.fromExternalId(id);
+    	
+    	recipe.edit(titulo, problema, solucao, utilizador, tags);
+    	
+     	   			   		
+ 	   		return "redirect:/recipes/"+recipe.getExternalId(); 
+    
+    }
 }
